@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Main.gd" type="Script" id=4]
 [ext_resource path="res://Box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Balloon.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node"]
 script = ExtResource( 4 )
 box = ExtResource( 5 )
+balloon = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 934.626, 543.534 )
@@ -20,3 +22,9 @@ scale = Vector2( 0.25, 0.25 )
 current = true
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+margin_left = -56.8745
+margin_top = -163.112
+margin_right = -56.8746
+margin_bottom = -163.112
+
+[connection signal="changetype" from="HUD" to="." method="_on_HUD_changetype"]
