@@ -46,6 +46,8 @@ size_flags_vertical = 9
 alignment = 2
 
 [node name="Health" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/PlayerStatus"]
+margin_right = 141.0
+margin_bottom = 583.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 texture = ExtResource( 1 )
