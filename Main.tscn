@@ -1,72 +1,17 @@
-<<<<<<< HEAD
-[gd_scene load_steps=5 format=2]
-=======
-[gd_scene load_steps=7 format=2]
->>>>>>> 92137c24ad627ee95e0d8e7322c9431d5ced2f91
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
-<<<<<<< HEAD
-[ext_resource path="res://Main.gd" type="Script" id=4]
 
 [node name="Main" type="Node"]
-script = ExtResource( 4 )
-player = ExtResource( 1 )
-=======
-[ext_resource path="res://src/Objects/Rect.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Main.gd" type="Script" id=5]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Control
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-export (NodePath) var playerNodePath
-export (NodePath) var HUDNodePath
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-	
-func _process(delta):
-	var player = get_node(playerNodePath)
-	var HUD = get_node(HUDNodePath)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
-
-[node name="Main" type="Node"]
-script = ExtResource( 5 )
-obj = ExtResource( 4 )
->>>>>>> 92137c24ad627ee95e0d8e7322c9431d5ced2f91
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 378.433, 632.002 )
+position = Vector2( 222.621, 687.919 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
-<<<<<<< HEAD
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-offset = Vector2( 300, 400 )
-scale = Vector2( 0.5, 0.5 )
-transform = Transform2D( 0.5, 0, 0, 0.5, 300, 400 )
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 3 )]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 960, 540 )
-current = true
-zoom = Vector2( 1.5, 1.5 )
-=======
-[node name="HUD" parent="." instance=ExtResource( 3 )]
-rect_scale = Vector2( 0.5, 0.5 )
-script = SubResource( 1 )
->>>>>>> 92137c24ad627ee95e0d8e7322c9431d5ced2f91

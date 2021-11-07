@@ -7,6 +7,9 @@ var velocity = Vector2()
 var jumping = false
 var counter = 0
 
+func _ready():
+	$AnimatedJump.show()
+	$AnimatedSprite.hide()
 
 func get_input():
 	velocity.x = 0
@@ -17,6 +20,8 @@ func get_input():
 	if jump and is_on_floor():
 		jumping = true
 		velocity.y = JUMP_SPEED
+		$AnimatedJump.frame = 0
+		$AnimatedJump.play()
 	if right:
 		velocity.x += MOVE_SPEED
 		$AnimatedSprite.scale.x = 1
@@ -24,11 +29,16 @@ func get_input():
 		velocity.x -= MOVE_SPEED
 		$AnimatedSprite.scale.x = -1
 
+	
 func _physics_process(delta):
 	get_input()
+		
 	velocity.y += GRAVITY * delta
+	
+	
 	if jumping and is_on_floor():
 		jumping = false
+	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	
