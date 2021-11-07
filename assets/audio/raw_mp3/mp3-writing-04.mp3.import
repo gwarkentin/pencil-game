@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mp3-writing-04.mp3-7cf7a92d34d2eeff4e5c8249314b00cd.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/raw_mp3/mp3-writing-04.mp3"
+dest_files=[ "res://.import/mp3-writing-04.mp3-7cf7a92d34d2eeff4e5c8249314b00cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

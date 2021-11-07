@@ -6,6 +6,9 @@
 radius = 103.009
 
 [node name="Balloon" type="RigidBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.131928, 229.25 )

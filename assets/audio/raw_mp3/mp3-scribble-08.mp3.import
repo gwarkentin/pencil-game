@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mp3-scribble-08.mp3-1558778275ae07fc6cda8b10978061a1.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/raw_mp3/mp3-scribble-08.mp3"
+dest_files=[ "res://.import/mp3-scribble-08.mp3-1558778275ae07fc6cda8b10978061a1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

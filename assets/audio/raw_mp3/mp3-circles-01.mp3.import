@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mp3-circles-01.mp3-c93d59e7d50139ac30d3320c13d5b52e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/raw_mp3/mp3-circles-01.mp3"
+dest_files=[ "res://.import/mp3-circles-01.mp3-c93d59e7d50139ac30d3320c13d5b52e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mp3-paper turn-08.mp3-d9e4b24c4d036f90b97ef83b69dc7930.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/raw_mp3/mp3-paper turn-08.mp3"
+dest_files=[ "res://.import/mp3-paper turn-08.mp3-d9e4b24c4d036f90b97ef83b69dc7930.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
