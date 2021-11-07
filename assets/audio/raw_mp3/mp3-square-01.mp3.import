@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mp3-square-01.mp3-d956e25ef484dd852dc0fc4bd1612b47.m
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

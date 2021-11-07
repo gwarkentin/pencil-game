@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mp3-erase-02.mp3-b1066ab82ef96a04aa17500528244771.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

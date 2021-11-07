@@ -38,6 +38,8 @@ func _spawn_fake_object(target):
 		"ramp":
 			new_obj = ramp.instance()	
 	new_obj.position = target
+	new_obj.get_node("CollisionShape2D").scale = Vector2(.25,.25)
+	new_obj.get_node("Sprite").scale = Vector2(.25,.25)
 	add_child(new_obj)
 
 func _change_current_type(new_type):

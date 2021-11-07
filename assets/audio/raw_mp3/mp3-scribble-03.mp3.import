@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mp3-scribble-03.mp3-2e05b1955c7d121d239e8d2291a69a45
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

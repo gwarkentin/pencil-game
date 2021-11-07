@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mp3-circles-02.mp3-6d4fa34f5a2c347c83b505499238c8b7.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

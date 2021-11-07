@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mp3-paper crumple-01.mp3-90cdd5336f0f2212b64627b2dbc
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -10,6 +10,7 @@ func _on_Button_balloon_pressed():
 
 func _on_Button_rope_pressed():
 	emit_signal("changetype", "rope")
-
+	
 func _on_Button_ramp_pressed():
 	emit_signal("changetype", "ramp")
+

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mp3-paper turn-02.mp3-a66baa2f013853b694af30e9ef90eb
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

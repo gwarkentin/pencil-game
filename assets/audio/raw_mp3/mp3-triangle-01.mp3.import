@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mp3-triangle-01.mp3-b7affab5d107a0e9203bc927d2c4d4c3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
