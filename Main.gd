@@ -1,13 +1,11 @@
 extends Node
 
 var counter = 0.0
-export (PackedScene) var player
-
+var hud_offset = Vector2()
 
 func _ready():
-	var pencil = $CanvasLayer/HUD/MarginContainer/VBoxContainer/MarginContainer/PlayerStatus/Pencil
-	var hp = $CanvasLayer/HUD/MarginContainer/VBoxContainer/MarginContainer/PlayerStatus/Health
-
-
+	hud_offset = $HUD.get_global_position() -$Player.get_global_position()
+	
 func _process(delta):
-	$Camera2D.position = $Player.position
+	$Camera2D.set_global_position($Player.get_global_position())
+	$HUD.set_global_position($Player.get_global_position() + hud_offset/2)
