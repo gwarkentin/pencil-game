@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
 export (int) var MOVE_SPEED = 400
-export (int) var JUMP_SPEED = 400
+export (int) var JUMP_SPEED = -500
 export (int) var GRAVITY = 1200
 var velocity = Vector2()
 var jumping = false
+var counter = 0
+
 
 func get_input():
 	velocity.x = 0
@@ -17,8 +19,10 @@ func get_input():
 		velocity.y = JUMP_SPEED
 	if right:
 		velocity.x += MOVE_SPEED
+		$AnimatedSprite.scale.x = 1
 	if left:
 		velocity.x -= MOVE_SPEED
+		$AnimatedSprite.scale.x = -1
 
 func _physics_process(delta):
 	get_input()
