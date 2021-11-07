@@ -1,29 +1,40 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/Character/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/Character/Walking_3.png" type="Texture" id=3]
-[ext_resource path="res://assets/Character/Drawing_InFront_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/Character/Drawing_Above_1.png" type="Texture" id=5]
-[ext_resource path="res://assets/Character/Drawing_InFront_2.png" type="Texture" id=6]
-[ext_resource path="res://assets/Character/Drawing_Above_2.png" type="Texture" id=7]
-[ext_resource path="res://assets/Character/Erasing_Above_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/Character/Drawing_Above_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Character/Erasing_InFront_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Character/Erasing_InFront_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/Character/Erasing_Above_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/Character/Drawing_InFront_2.png" type="Texture" id=8]
 [ext_resource path="res://assets/Character/Falling.png" type="Texture" id=9]
 [ext_resource path="res://assets/Character/Walking_1.png" type="Texture" id=10]
 [ext_resource path="res://assets/Character/Crouch.png" type="Texture" id=11]
 [ext_resource path="res://assets/Character/Walking_2.png" type="Texture" id=12]
-[ext_resource path="res://assets/Character/Erasing_InFront_2.png" type="Texture" id=13]
-[ext_resource path="res://assets/Character/Erasing_InFront_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/Character/Drawing_Above_1.png" type="Texture" id=13]
+[ext_resource path="res://assets/Character/Erasing_Above_2.png" type="Texture" id=14]
 [ext_resource path="res://assets/Character/TakingDamage.png" type="Texture" id=15]
-[ext_resource path="res://assets/Character/Jumping_2.png" type="Texture" id=16]
+[ext_resource path="res://assets/Character/Drawing_InFront_1.png" type="Texture" id=16]
 [ext_resource path="res://assets/Character/Jumping_1.png" type="Texture" id=17]
+[ext_resource path="res://assets/Character/Jumping_2.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "jump",
+"speed": 3.0
+}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "fall",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
@@ -33,55 +44,39 @@ animations = [ {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "damage",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
+"speed": 3.0
 }, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "idle",
-"speed": 2.0
-} ]
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "erase_front",
-"speed": 5.0
+"speed": 2.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "erase_above",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "draw_front",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "draw_above",
 "speed": 2.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "draw_front",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "erase_above",
+"speed": 2.0
 } ]
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 17 ), ExtResource( 16 ) ],
-"loop": false,
-"name": "jump",
-"speed": 5.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 62.2907
 height = 356.886
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 77.8129, 10 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -90,26 +85,14 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 45.4657, -191.246 )
 frames = SubResource( 1 )
-animation = "idle"
+animation = "walk"
+frame = 2
 playing = true
-
-[node name="AnimatedDraws" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 194.426, -149.002 )
-frames = SubResource( 3 )
-animation = "draw_front"
-playing = true
-
-[node name="AnimatedJump" type="AnimatedSprite" parent="."]
-position = Vector2( 59.4589, -189.241 )
-frames = SubResource( 4 )
-animation = "jump"
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.88011, -56.5092 )
-shape = SubResource( 5 )
+position = Vector2( 48.1506, -105.947 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 5.22741, 163.457 )
-shape = SubResource( 6 )
+position = Vector2( 50.4979, 114.019 )
+shape = SubResource( 3 )
