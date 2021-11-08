@@ -9,14 +9,14 @@ var jump_time = 0.0
 var crouching = false
 var counter = 0
 var drawing = false
-var idle = "idle"
+var idle = ""
 
 func get_input():
 	velocity.x = 0
 	var right = Input.is_action_pressed('right')
 	var left = Input.is_action_pressed('left')
-	var crouch = Input.is_action_just_pressed('jump')
-	var jump = Input.is_action_just_released('jump')
+	var crouch = Input.is_action_just_pressed('up')
+	var jump = Input.is_action_just_released('up')
 	
 	if crouch and is_on_floor():
 		crouching = true
@@ -59,16 +59,13 @@ func _physics_process(delta):
 	
 func _switch_animation():
 	if crouching:
-		$AnimatedSprite.play('crouch')
+		$AnimatedSprite.play('crouch' + idle)
 	elif jumping:
-		$AnimatedSprite.play('jump')
+		$AnimatedSprite.play('jump' + idle)
 	elif velocity.x == 0:
-		if idle == "erase":
-			$AnimatedSprite.play('idle_erase')
-		else:
-			$AnimatedSprite.play('idle')
+		$AnimatedSprite.play('idle' + idle)
 	else:
-		$AnimatedSprite.play('walk')
+		$AnimatedSprite.play('walk' + idle)
 
 func _draw_or_erase(relative_dir, erase = false):
 	drawing = true

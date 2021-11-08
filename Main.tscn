@@ -57,8 +57,9 @@ __meta__ = {
 [node name="TextureRect3" type="TextureRect" parent="Control/BG"]
 anchor_left = 0.257166
 anchor_right = 0.257166
+margin_left = -10.2866
 margin_top = 3240.0
-margin_right = 1920.0
+margin_right = 1909.71
 margin_bottom = 4320.0
 rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
@@ -72,9 +73,9 @@ __meta__ = {
 anchor_top = 0.109021
 anchor_bottom = 0.109021
 margin_left = 5760.0
-margin_top = 3240.0
+margin_top = 3235.64
 margin_right = 7680.0
-margin_bottom = 4320.0
+margin_bottom = 4315.64
 rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 stretch_mode = 2
@@ -255,7 +256,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 515.342, 427.608 )
+position = Vector2( 13956.9, 2191.07 )
 
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
@@ -271,4 +272,5 @@ margin_top = -1185.71
 margin_right = -1999.94
 margin_bottom = -1185.71
 
+[connection signal="goal" from="Map" to="." method="_on_Map_goal"]
 [connection signal="changing_types" from="HUD" to="." method="_on_HUD_changing_types"]

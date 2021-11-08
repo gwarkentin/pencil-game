@@ -66,6 +66,12 @@ func _erase_item(item):
 func _on_HUD_changing_types(new_type):
 	current_type = new_type
 	if current_type == "erase":
-		$Player.idle = "erase"
+		$Player.idle = "_erase"
 	else:
-		$Player.idle = "idle"
+		$Player.idle = ""
+
+
+func _on_Map_goal(body):
+	print(body)
+	if body.name == "Player":
+		get_tree().change_scene("res://Credits.tscn")
