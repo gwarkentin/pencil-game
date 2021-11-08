@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://assets/audio/raw_mp3/mp3-line-05.mp3" type="AudioStream" id=8]
 [ext_resource path="res://assets/audio/raw_mp3/mp3-line-04.mp3" type="AudioStream" id=9]
@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/audio/raw_mp3/mp3-line-06.mp3" type="AudioStream" id=15]
 [ext_resource path="res://assets/audio/raw_mp3/mp3-writing-05.mp3" type="AudioStream" id=16]
 [ext_resource path="res://assets/audio/raw_mp3/mp3-line-01.mp3" type="AudioStream" id=17]
-[ext_resource path="res://assets/audio/raw_mp3/mp3-triangle-01.mp3" type="AudioStream" id=18]
 [ext_resource path="res://assets/audio/raw_mp3/mp3-paper crumple-02.mp3" type="AudioStream" id=19]
 [ext_resource path="res://assets/audio/raw_mp3/mp3-paper crumple-04.mp3" type="AudioStream" id=20]
 [ext_resource path="res://assets/audio/raw_mp3/mp3-writing-01.mp3" type="AudioStream" id=21]
@@ -77,11 +76,6 @@ stream = ExtResource( 15 )
 
 [node name="RopeSound7" type="AudioStreamPlayer2D" parent="RopeSounds"]
 stream = ExtResource( 12 )
-
-[node name="RampSounds" type="Node2D" parent="."]
-
-[node name="RampSound1" type="AudioStreamPlayer2D" parent="RampSounds"]
-stream = ExtResource( 18 )
 
 [node name="CrumpleSounds" type="Node2D" parent="."]
 

@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export (int) var MOVE_SPEED = 400
-export (int) var JUMP_SPEED = -500
-export (int) var GRAVITY = 1200
+export (int) var MOVE_SPEED = 1200
+export (int) var JUMP_SPEED = -1400
+export (int) var GRAVITY = 1200 * 2
 var velocity = Vector2()
 var jumping = false
 var jump_time = 0.0
@@ -36,9 +36,7 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity.y += GRAVITY * delta
-	
 	_switch_animation()
-	
 	if crouching:
 		velocity.x = 0
 	velocity = move_and_slide(velocity, Vector2.UP, false, 4, 0.785398, false)
@@ -59,3 +57,4 @@ func _switch_animation():
 		$AnimatedSprite.play('idle')
 	else:
 		$AnimatedSprite.play('walk')
+

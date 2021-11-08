@@ -1,49 +1,44 @@
-extends Node
+extends Node2D
 
 var counter = 0.0
 var hud_offset = Vector2()
 export (PackedScene) var box
 export (PackedScene) var balloon
-export (PackedScene) var rope
 export (PackedScene) var ramp
-var current_type = "box"
+var new_obj
 
 func _ready():
-	hud_offset = $HUD.get_global_position() -$Player.get_global_position()
+	hud_offset = $Camera2D.get_global_position() - $HUD.get_global_position()
 	
 func _process(delta):
 	$Camera2D.set_global_position($Player.get_global_position())
-	$HUD.set_global_position(Vector2($Player.get_global_position() - $HUD.get_size() / 2 + Vector2(0, -30)).floor())
+	$HUD.set_global_position($Camera2D.get_global_position() - hud_offset)
 	counter += delta
 	if counter > 2:
 		counter = 0
-		$HUD/MarginContainer/VBoxContainer/HBoxContainer/Health.value -= 1
-		$HUD/MarginContainer/VBoxContainer/HBoxContainer/Graphite.value -= 5
+		$HUD/Health.value -= 1
+		$HUD/Graphite.value -= 5
 		
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		var target = get_viewport().get_mouse_position() + $Camera2D.position - Vector2(get_viewport().size / 2).floor()
-		print(target)
+		var target = get_global_mouse_position()
 		_spawn_fake_object(target)
 		
 func _spawn_fake_object(target):
-	var new_obj = box.instance()
-	match current_type:
+	print($HUD.current_type)
+	match $HUD.current_type:
 		"box":
 			new_obj = box.instance()
 		"balloon":
 			new_obj = balloon.instance()
-		"rope":
-			new_obj = rope.instance()
 		"ramp":
-			new_obj = ramp.instance()	
-	new_obj.position = target
-	new_obj.get_node("CollisionShape2D").scale = Vector2(.25,.25)
-	new_obj.get_node("Sprite").scale = Vector2(.25,.25)
-	add_child(new_obj)
+			new_obj = ramp.instance()
+		null:
+			new_obj = null
+			
+	if new_obj:
+		new_obj.position = target
+		self.add_child(new_obj)
 
-func _change_current_type(new_type):
-	current_type = new_type
 
-func _on_HUD_changetype(new_type):
-	_change_current_type(new_type)
+	
