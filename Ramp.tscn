@@ -21,3 +21,5 @@ polygon = PoolVector2Array( -235.68, 26.67, -22.1738, -182.277, 190.952, 22.871 
 
 [node name="RampSound1" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 3 )
+
+[connection signal="input_event" from="." to="." method="_on_Box_input_event"]

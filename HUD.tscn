@@ -18,10 +18,10 @@ __meta__ = {
 }
 
 [node name="box" type="TextureButton" parent="."]
-margin_left = 78.1963
-margin_top = 20.6313
-margin_right = 409.196
-margin_bottom = 350.631
+margin_left = 111.196
+margin_top = 39.6313
+margin_right = 442.196
+margin_bottom = 369.631
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = ExtResource( 5 )
@@ -30,17 +30,17 @@ __meta__ = {
 }
 
 [node name="balloon" type="TextureButton" parent="."]
-margin_left = 109.617
-margin_top = 416.216
-margin_right = 366.617
-margin_bottom = 741.216
+margin_left = 141.617
+margin_top = 432.216
+margin_right = 398.617
+margin_bottom = 757.216
 size_flags_vertical = 3
 texture_normal = ExtResource( 3 )
 
 [node name="ramp" type="TextureButton" parent="."]
-margin_left = 70.1896
+margin_left = 102.19
 margin_top = 871.249
-margin_right = 395.19
+margin_right = 427.19
 margin_bottom = 1198.25
 rect_rotation = -135.2
 rect_pivot_offset = Vector2( 162, 162 )
@@ -51,10 +51,10 @@ __meta__ = {
 }
 
 [node name="Health" type="TextureProgress" parent="."]
-margin_left = 27.7969
-margin_top = 1788.43
-margin_right = 266.797
-margin_bottom = 2334.43
+margin_left = 80.7969
+margin_top = 1791.43
+margin_right = 319.797
+margin_bottom = 2337.43
 max_value = 5.0
 value = 5.0
 texture_progress = ExtResource( 2 )
@@ -64,10 +64,11 @@ __meta__ = {
 }
 
 [node name="Graphite" type="TextureProgress" parent="."]
-margin_left = 307.092
+margin_left = 360.092
 margin_top = 1803.13
-margin_right = 389.092
+margin_right = 442.092
 margin_bottom = 2371.13
+step = 0.1
 value = 100.0
 texture_progress = ExtResource( 1 )
 fill_mode = 3

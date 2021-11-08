@@ -8,6 +8,7 @@ var jumping = false
 var jump_time = 0.0
 var crouching = false
 var counter = 0
+var drawing = false
 
 func get_input():
 	velocity.x = 0
@@ -26,17 +27,24 @@ func get_input():
 			velocity.x -= MOVE_SPEED
 			$AnimatedSprite.scale.x = -1
 	
-	if crouching and jump and is_on_floor():
-		jumping = true
-		jump_time = 0
-		crouching = false
-		velocity.y += JUMP_SPEED
+	if crouching:
+		if is_on_floor():
+			if jump:
+				jumping = true
+				jump_time = 0
+				crouching = false
+				velocity.y += JUMP_SPEED
+		else:
+			crouching = false
+			
 		
 
 func _physics_process(delta):
 	get_input()
 	velocity.y += GRAVITY * delta
-	_switch_animation()
+	if not drawing:
+		_switch_animation()
+		
 	if crouching:
 		velocity.x = 0
 	velocity = move_and_slide(velocity, Vector2.UP, false, 4, 0.785398, false)
@@ -58,3 +66,27 @@ func _switch_animation():
 	else:
 		$AnimatedSprite.play('walk')
 
+func _draw_or_erase(relative_dir, erase = false):
+	drawing = true
+	if relative_dir.x > 0:
+		$AnimatedSprite.scale.x = 1
+	else:
+		$AnimatedSprite.scale.x = -1
+		
+	if relative_dir.y > -300:
+		if erase:
+			$AnimatedSprite.play('erase_front')
+		else:
+			$AnimatedSprite.play('draw_front')
+	else:
+		if erase:
+			$AnimatedSprite.play('erase_above')
+		else:
+			$AnimatedSprite.play('draw_above')
+
+func _draw_done():
+	drawing = false
+
+func _on_AnimatedSprite_animation_finished():
+	_draw_done()
+	

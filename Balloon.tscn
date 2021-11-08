@@ -50,3 +50,5 @@ stream = ExtResource( 2 )
 
 [node name="BalloonSound4" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 5 )
+
+[connection signal="input_event" from="Balloon" to="." method="_on_Balloon_input_event"]
