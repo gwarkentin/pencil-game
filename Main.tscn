@@ -21,6 +21,7 @@ margin_top = -1080.0
 margin_right = -1880.0
 margin_bottom = -1040.0
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -54,6 +55,8 @@ __meta__ = {
 }
 
 [node name="TextureRect3" type="TextureRect" parent="Control/BG"]
+anchor_left = 0.257166
+anchor_right = 0.257166
 margin_top = 3240.0
 margin_right = 1920.0
 margin_bottom = 4320.0

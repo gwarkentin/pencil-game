@@ -10,6 +10,9 @@
 extents = Vector2( 157, 157 )
 
 [node name="Box" type="RigidBody2D"]
+input_pickable = true
+collision_layer = 3
+collision_mask = 3
 gravity_scale = 8.0
 script = ExtResource( 5 )
 
@@ -31,5 +34,3 @@ stream = ExtResource( 4 )
 
 [node name="BoxSound3" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 3 )
-
-[connection signal="input_event" from="." to="." method="_on_Box_input_event"]

@@ -72,15 +72,17 @@ func _draw_or_erase(relative_dir, erase = false):
 		$AnimatedSprite.scale.x = 1
 	else:
 		$AnimatedSprite.scale.x = -1
-		
-	if relative_dir.y > -300:
-		if erase:
+	
+	if erase:
+		if relative_dir.y > -300:
 			$AnimatedSprite.play('erase_front')
 		else:
-			$AnimatedSprite.play('draw_front')
-	else:
-		if erase:
 			$AnimatedSprite.play('erase_above')
+		var sound = $EraseSounds.get_children()[rand_range(0,$EraseSounds.get_child_count())]
+		sound.play()
+	else:
+		if relative_dir.y > -300:
+			$AnimatedSprite.play('draw_front')
 		else:
 			$AnimatedSprite.play('draw_above')
 
