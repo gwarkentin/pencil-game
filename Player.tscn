@@ -36,6 +36,16 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "float",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
 "name": "float_erase",
@@ -101,20 +111,10 @@ animations = [ {
 "name": "walk_erase",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 27 ) ],
-"loop": true,
+"frames": [ ExtResource( 32 ), ExtResource( 27 ), ExtResource( 29 ) ],
+"loop": false,
 "name": "jump_erase",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "float",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "idle",
-"speed": 2.0
+"speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -130,7 +130,8 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 46.4481, -191.246 )
 frames = SubResource( 1 )
-animation = "float"
+animation = "jump_erase"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
