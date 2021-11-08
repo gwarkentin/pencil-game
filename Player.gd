@@ -17,6 +17,10 @@ var last_on_floor = 0.0
 
 signal take_damage(amount)
 
+func _take_damage(amount):
+	emit_signal("take_damage", amount)
+	taking_damage = true
+	
 func get_input():
 	velocity.x = 0
 	var right = Input.is_action_pressed('right')
@@ -49,8 +53,7 @@ func get_input():
 func _physics_process(delta):
 	if is_on_floor():
 		if falling:
-			emit_signal("take_damage", ceil(last_on_floor/ 8))
-			taking_damage = true
+			_take_damage(ceil(last_on_floor/ 8))
 		last_on_floor = 0.0
 		falling = false
 		

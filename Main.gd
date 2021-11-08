@@ -22,7 +22,8 @@ func _process(delta):
 	
 func _input(event):
 	if Input.is_action_pressed('quit'):
-		get_tree().change_scene("res://Splash.tscn")
+		if get_tree().change_scene("res://Splash.tscn") != OK:
+			print ("An unexpected error occured when trying to switch to the Readme scene")
 		
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		var target = get_global_mouse_position()
@@ -70,12 +71,18 @@ func _on_HUD_changing_types(new_type):
 
 
 func _on_Map_goal(body):
-	print(body)
 	if body.name == "Player":
-		get_tree().change_scene("res://Credits.tscn")
+		if get_tree().change_scene("res://Credits.tscn") != OK:
+			print ("An unexpected error occured when trying to switch to the Readme scene")
 
 
 func _on_Player_take_damage(amount):
 	$HUD/Health.value -= amount
 	if $HUD/Health.value <= 0:
-		get_tree().change_scene("res://Splash.tscn")
+		if get_tree().change_scene("res://Credits.tscn") != OK:
+			print ("An unexpected error occured when trying to switch to the Readme scene")
+
+
+func _on_Map_deal_damage(body, amount):
+	if body.name == "Player":
+		$Player._take_damage(amount)

@@ -7,10 +7,14 @@ func _input(_event):
 		get_tree().quit()
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://Controls.tscn")
+	if get_tree().change_scene("res://Controls.tscn") != OK:
+		print ("An unexpected error occured when trying to switch to the Readme scene")
+	
 
 func _on_Credits_pressed():
-	get_tree().change_scene("res://Credits.tscn")
+	if get_tree().change_scene("res://Credits.tscn") != OK:
+		print ("An unexpected error occured when trying to switch to the Readme scene")
+
 
 func _on_Exit_pressed():
 	get_tree().quit()
