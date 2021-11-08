@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/UI/TitleCard_Credits.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/Buttons_Exit.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/Buttons_Credits_Click.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/TitleCard_Base.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/Buttons_Credits.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/Buttons_Play_Click.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/Buttons_Play.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/Buttons_Exit_Click.png" type="Texture" id=8]
+[ext_resource path="res://Splash.gd" type="Script" id=9]
+
+[node name="Splash" type="Control"]
+anchor_right = 1.875
+anchor_bottom = 1.8
+margin_left = -11.2136
+margin_top = -4.0
+margin_right = -11.2136
+margin_bottom = -4.0
+rect_scale = Vector2( 0.56, 0.56 )
+size_flags_horizontal = 7
+size_flags_vertical = 7
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="TextureButton" parent="."]
+margin_left = 1046.61
+margin_top = 453.639
+margin_right = 1457.61
+margin_bottom = 599.639
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="TextureButton" parent="."]
+margin_left = 1046.61
+margin_top = 637.639
+margin_right = 1457.61
+margin_bottom = 783.639
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 1045.33
+margin_top = 823.878
+margin_right = 1456.33
+margin_bottom = 969.878
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background2" type="TextureRect" parent="."]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/pencil.png" type="Texture" id=1]
 [ext_resource path="res://assets/Character/Idle-no-pencil.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://assets/Background/DrawingButton_Box.png" type="Texture" id=5]
 [ext_resource path="res://assets/Background/DrawingButton_Eraser.png" type="Texture" id=6]
 [ext_resource path="res://assets/Background/DrawingButton_Ramp.png" type="Texture" id=7]
+[ext_resource path="res://assets/Background/DrawingButton_Balloon_Pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/Background/DrawingButton_Eraser_Pressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/Background/DrawingButton_Box_Pressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/Background/DrawingButton_Ramp_Pressed.png" type="Texture" id=11]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -18,46 +22,64 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="box" type="TextureButton" parent="."]
-margin_left = 111.196
-margin_top = 39.6313
-margin_right = 442.196
-margin_bottom = 369.631
+[node name="Butts" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="box" type="TextureButton" parent="Butts"]
+margin_left = 119.196
+margin_top = 38.6313
+margin_right = 450.196
+margin_bottom = 368.631
 size_flags_horizontal = 5
 size_flags_vertical = 5
+toggle_mode = true
 texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="balloon" type="TextureButton" parent="."]
-margin_left = 141.617
-margin_top = 432.216
-margin_right = 398.617
-margin_bottom = 757.216
+[node name="balloon" type="TextureButton" parent="Butts"]
+margin_left = 150.719
+margin_top = 434.492
+margin_right = 407.719
+margin_bottom = 759.492
 size_flags_vertical = 3
+toggle_mode = true
 texture_normal = ExtResource( 3 )
-
-[node name="erase" type="TextureButton" parent="."]
-margin_left = 97.6616
-margin_top = 1133.07
-margin_right = 428.662
-margin_bottom = 1463.07
-size_flags_vertical = 3
-texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ramp" type="TextureButton" parent="."]
-margin_left = 102.19
-margin_top = 871.249
-margin_right = 427.19
-margin_bottom = 1198.25
+[node name="ramp" type="TextureButton" parent="Butts"]
+margin_left = 116.819
+margin_top = 890.074
+margin_right = 441.819
+margin_bottom = 1217.08
 rect_rotation = -135.2
 rect_pivot_offset = Vector2( 162, 162 )
 size_flags_horizontal = 5
+toggle_mode = true
 texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="erase" type="TextureButton" parent="Butts"]
+margin_left = 111.743
+margin_top = 1333.23
+margin_right = 442.744
+margin_bottom = 1663.23
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -88,7 +110,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="box" to="." method="_on_box_pressed"]
-[connection signal="pressed" from="balloon" to="." method="_on_balloon_pressed"]
-[connection signal="pressed" from="erase" to="." method="_on_erase_pressed"]
-[connection signal="pressed" from="ramp" to="." method="_on_ramp_pressed"]
+[connection signal="button_down" from="Butts/box" to="." method="_on_box_button_down"]
+[connection signal="button_down" from="Butts/balloon" to="." method="_on_balloon_button_down"]
+[connection signal="button_down" from="Butts/ramp" to="." method="_on_ramp_button_down"]
+[connection signal="button_down" from="Butts/erase" to="." method="_on_erase_button_down"]

@@ -9,6 +9,7 @@ var jump_time = 0.0
 var crouching = false
 var counter = 0
 var drawing = false
+var idle = "idle"
 
 func get_input():
 	velocity.x = 0
@@ -62,7 +63,10 @@ func _switch_animation():
 	elif jumping:
 		$AnimatedSprite.play('jump')
 	elif velocity.x == 0:
-		$AnimatedSprite.play('idle')
+		if idle == "erase":
+			$AnimatedSprite.play('idle_erase')
+		else:
+			$AnimatedSprite.play('idle')
 	else:
 		$AnimatedSprite.play('walk')
 

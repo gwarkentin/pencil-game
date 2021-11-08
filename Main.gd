@@ -21,6 +21,9 @@ func _process(delta):
 	$HUD/Graphite.value += manaspeed * delta
 	
 func _input(event):
+	if Input.is_action_pressed('quit'):
+		get_tree().change_scene("res://Splash.tscn")
+		
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		var target = get_global_mouse_position()
 		var space_state = get_world_2d().direct_space_state
@@ -31,8 +34,6 @@ func _input(event):
 		else:
 			if target.x > $HUD.get_global_position().x + 500:
 				_spawn_fake_object(target)
-			
-
 
 func _spawn_fake_object(target):
 	match current_type:
@@ -64,4 +65,7 @@ func _erase_item(item):
 
 func _on_HUD_changing_types(new_type):
 	current_type = new_type
-
+	if current_type == "erase":
+		$Player.idle = "erase"
+	else:
+		$Player.idle = "idle"
