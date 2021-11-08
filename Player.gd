@@ -11,6 +11,12 @@ var counter = 0
 var drawing = false
 var idle = ""
 
+var taking_damage = false
+var falling = false
+var last_on_floor = 0.0
+
+signal take_damage(amount)
+
 func get_input():
 	velocity.x = 0
 	var right = Input.is_action_pressed('right')
@@ -41,6 +47,17 @@ func get_input():
 		
 
 func _physics_process(delta):
+	if is_on_floor():
+		if falling:
+			emit_signal("take_damage", ceil(last_on_floor/ 8))
+			taking_damage = true
+		last_on_floor = 0.0
+		falling = false
+		
+	last_on_floor += delta * 5
+	if last_on_floor >= 8:
+		falling = true
+	
 	get_input()
 	velocity.y += GRAVITY * delta
 	if not drawing:
@@ -58,7 +75,11 @@ func _physics_process(delta):
 
 	
 func _switch_animation():
-	if crouching:
+	if taking_damage:
+		$AnimatedSprite.play("damage")
+	elif falling:
+		$AnimatedSprite.play('falling')
+	elif crouching:
 		$AnimatedSprite.play('crouch' + idle)
 	elif jumping:
 		$AnimatedSprite.play('jump' + idle)
@@ -89,6 +110,7 @@ func _draw_or_erase(relative_dir, erase = false):
 
 func _draw_done():
 	drawing = false
+	taking_damage = false
 
 func _on_AnimatedSprite_animation_finished():
 	_draw_done()

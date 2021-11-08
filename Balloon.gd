@@ -7,7 +7,6 @@ var velocity = Vector2(0,0)
 
 var connected = false
 var connected_to
-
 	
 func _ready():
 	var sound = $Sounds.get_children()[rand_range(0,$Sounds.get_child_count())]

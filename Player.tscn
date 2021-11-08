@@ -36,6 +36,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "falling",
+"speed": 2.0
+}, {
 "frames": [ ExtResource( 31 ) ],
 "loop": true,
 "name": "float",
@@ -61,18 +66,13 @@ animations = [ {
 "name": "jump",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "fall",
-"speed": 2.0
-}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": false,
 "name": "crouch",
 "speed": 2.0
 }, {
 "frames": [ ExtResource( 15 ) ],
-"loop": true,
+"loop": false,
 "name": "damage",
 "speed": 2.0
 }, {
@@ -130,8 +130,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 46.4481, -191.246 )
 frames = SubResource( 1 )
-animation = "jump_erase"
-frame = 2
+animation = "falling"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

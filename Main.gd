@@ -73,3 +73,9 @@ func _on_Map_goal(body):
 	print(body)
 	if body.name == "Player":
 		get_tree().change_scene("res://Credits.tscn")
+
+
+func _on_Player_take_damage(amount):
+	$HUD/Health.value -= amount
+	if $HUD/Health.value <= 0:
+		get_tree().change_scene("res://Splash.tscn")
