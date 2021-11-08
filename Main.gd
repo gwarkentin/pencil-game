@@ -5,10 +5,10 @@ var hud_offset = Vector2()
 export (PackedScene) var box
 export (PackedScene) var balloon
 export (PackedScene) var ramp
+export (PackedScene) var eraser
 export (int) var max_objects = 10
 var new_obj
 var clicked_deadzone = false
-var erasable_mask = 0b0010
 export (float) var manaspeed = 5.0
 var current_type
 
@@ -26,16 +26,11 @@ func _input(event):
 		
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		var target = get_global_mouse_position()
-		var space_state = get_world_2d().direct_space_state
-		var result = space_state.intersect_ray(target, target + Vector2(0.1,0.1), [self],erasable_mask)
-		if current_type == "erase":
-			if result:
-				_erase_item(instance_from_id(result["collider_id"]))
-		else:
-			if target.x > $HUD.get_global_position().x + 500:
-				_spawn_fake_object(target)
+		if target.x > $HUD.get_global_position().x + 500:
+			_spawn_fake_object(target)
 
 func _spawn_fake_object(target):
+	var erasing = false
 	match current_type:
 		"box":
 			new_obj = box.instance()
@@ -43,24 +38,27 @@ func _spawn_fake_object(target):
 			new_obj = balloon.instance()
 		"ramp":
 			new_obj = ramp.instance()
-		"erase", null:
+		"erase":
+			new_obj = eraser.instance()
+			new_obj.connect("return_graphite", self, "_return_graphite")
+			erasing = true
+		null:
 			new_obj = null
 
-	if new_obj and $HUD/Graphite.value - new_obj.manacost >= 0:
+	if new_obj:
 		new_obj.position = target
-		$DrawnStuff.add_child(new_obj)
-		$HUD/Graphite.value -= new_obj.manacost
 		var relative_dir = target - $Player.get_global_position()
-		$Player._draw_or_erase(relative_dir)
+		if $HUD/Graphite.value - new_obj.manacost >= 0:
+			$DrawnStuff.add_child(new_obj)
+			$HUD/Graphite.value -= new_obj.manacost
+			$Player._draw_or_erase(relative_dir, erasing)
 		
 	if $DrawnStuff.get_child_count() > max_objects:
 		$DrawnStuff.get_child(0).queue_free()
 
-func _erase_item(item):
-	var relative_dir = item.get_global_position() - $Player.get_global_position()
-	$Player._draw_or_erase(relative_dir, true)
-	$HUD/Graphite.value += item.manacost
-	item.queue_free()
+
+func _return_graphite(manacost):
+	$HUD/Graphite.value += manacost
 	
 
 func _on_HUD_changing_types(new_type):

@@ -12,7 +12,6 @@ config_version=4
 
 config/name="Pencil"
 run/main_scene="res://Splash.tscn"
-run/disable_stdout=true
 run/disable_stderr=true
 config/icon="res://assets/UI/TitleCard_Thumbnail.png"
 
