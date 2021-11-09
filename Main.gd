@@ -51,7 +51,10 @@ func _spawn_fake_object(target):
 		new_obj.position = target
 		var relative_dir = target - $Player.get_global_position()
 		if $HUD/Graphite.value - new_obj.manacost >= 0:
-			$DrawnStuff.add_child(new_obj)
+			if erasing:
+				add_child(new_obj)
+			else:
+				$DrawnStuff.add_child(new_obj)
 			$HUD/Graphite.value -= new_obj.manacost
 			$Player._draw_or_erase(relative_dir, erasing)
 		
@@ -87,5 +90,4 @@ func _on_Player_take_damage(amount):
 
 
 func _on_Map_deal_damage(body, amount):
-	if body.name == "Player":
-		$Player._take_damage(amount)
+	body._take_damage(amount)

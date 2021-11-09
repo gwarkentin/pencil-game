@@ -13,6 +13,7 @@ var idle = ""
 
 var taking_damage = false
 var falling = false
+var falling_velocity = 0.0
 var last_on_floor = 0.0
 
 signal take_damage(amount)
@@ -55,16 +56,16 @@ func get_input():
 func _physics_process(delta):
 	if is_on_floor():
 		if falling:
-			_take_damage(ceil(last_on_floor/ 8))
-		last_on_floor = 0.0
+			_take_damage(ceil(falling_velocity / GRAVITY))
 		falling = false
-		
-	last_on_floor += delta * 5
-	if last_on_floor >= 8:
-		falling = true
+	else:
+		if falling_velocity > GRAVITY:
+			falling = true
 	
 	get_input()
 	velocity.y += GRAVITY * delta
+	falling_velocity = velocity.y
+	
 	if not drawing:
 		_switch_animation()
 		
