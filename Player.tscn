@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://assets/Character/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -33,6 +33,11 @@
 [ext_resource path="res://assets/Character/BalloonFloat.png" type="Texture" id=31]
 [ext_resource path="res://assets/Character/Erase/Jumping-Erase 1.png" type="Texture" id=32]
 [ext_resource path="res://assets/Character/Erase/Walking-Erase 1.png" type="Texture" id=33]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-08.mp3" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-05.mp3" type="AudioStream" id=36]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-07.mp3" type="AudioStream" id=38]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-04.mp3" type="AudioStream" id=40]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-03.mp3" type="AudioStream" id=41]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -160,5 +165,22 @@ stream = ExtResource( 21 )
 
 [node name="EraseSound6" type="AudioStreamPlayer2D" parent="EraseSounds"]
 stream = ExtResource( 19 )
+
+[node name="DropSounds" type="Node2D" parent="."]
+
+[node name="DropSound3" type="AudioStreamPlayer2D" parent="DropSounds"]
+stream = ExtResource( 41 )
+
+[node name="DropSound4" type="AudioStreamPlayer2D" parent="DropSounds"]
+stream = ExtResource( 40 )
+
+[node name="DropSound5" type="AudioStreamPlayer2D" parent="DropSounds"]
+stream = ExtResource( 36 )
+
+[node name="DropSound7" type="AudioStreamPlayer2D" parent="DropSounds"]
+stream = ExtResource( 38 )
+
+[node name="DropSound8" type="AudioStreamPlayer2D" parent="DropSounds"]
+stream = ExtResource( 34 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

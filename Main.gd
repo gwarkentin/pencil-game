@@ -22,6 +22,7 @@ func _process(delta):
 	
 func _input(event):
 	if Input.is_action_pressed('quit'):
+		Global.play_random_sound("CrumpleSounds")
 		if get_tree().change_scene("res://Splash.tscn") != OK:
 			print ("An unexpected error occured when trying to switch to the Readme scene")
 		
@@ -72,6 +73,7 @@ func _on_HUD_changing_types(new_type):
 
 func _on_Map_goal(body):
 	if body.name == "Player":
+		Global.play_random_sound("TurnSounds")
 		if get_tree().change_scene("res://Credits.tscn") != OK:
 			print ("An unexpected error occured when trying to switch to the Readme scene")
 
@@ -79,6 +81,7 @@ func _on_Map_goal(body):
 func _on_Player_take_damage(amount):
 	$HUD/Health.value -= amount
 	if $HUD/Health.value <= 0:
+		Global.play_random_sound("CrumpleSounds")
 		if get_tree().change_scene("res://Credits.tscn") != OK:
 			print ("An unexpected error occured when trying to switch to the Readme scene")
 

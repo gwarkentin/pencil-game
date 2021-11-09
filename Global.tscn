@@ -1,0 +1,224 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://assets/audio/raw_mp3/mp3-erase-04.mp3" type="AudioStream" id=1]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-line-05.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-line-07.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-line-04.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-writing-04.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-line-01.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper crumple-01.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-erase-03.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-writing-05.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper crumple-04.mp3" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-07.mp3" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-line-02.mp3" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-line-06.mp3" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-scribble-06.mp3" type="AudioStream" id=14]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-09.mp3" type="AudioStream" id=15]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-04.mp3" type="AudioStream" id=16]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-scribble-01.mp3" type="AudioStream" id=17]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-scribble-08.mp3" type="AudioStream" id=18]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-scribble-04.mp3" type="AudioStream" id=19]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-08.mp3" type="AudioStream" id=20]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-writing-08.mp3" type="AudioStream" id=21]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-writing-03.mp3" type="AudioStream" id=22]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-06.mp3" type="AudioStream" id=23]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-10.mp3" type="AudioStream" id=24]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-02.mp3" type="AudioStream" id=25]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-03.mp3" type="AudioStream" id=26]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-writing-02.mp3" type="AudioStream" id=27]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-05.mp3" type="AudioStream" id=28]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-writing-07.mp3" type="AudioStream" id=29]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-06.mp3" type="AudioStream" id=30]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-02.mp3" type="AudioStream" id=31]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-07.mp3" type="AudioStream" id=32]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-writing-06.mp3" type="AudioStream" id=33]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-01.mp3" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-04.mp3" type="AudioStream" id=35]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-line-03.mp3" type="AudioStream" id=36]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-08.mp3" type="AudioStream" id=37]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-05.mp3" type="AudioStream" id=38]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-drop-03.mp3" type="AudioStream" id=39]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper turn-01.mp3" type="AudioStream" id=40]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-writing-01.mp3" type="AudioStream" id=41]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper crumple-03.mp3" type="AudioStream" id=42]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-erase-01.mp3" type="AudioStream" id=43]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-erase-06.mp3" type="AudioStream" id=44]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-erase-05.mp3" type="AudioStream" id=45]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-erase-02.mp3" type="AudioStream" id=46]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-scribble-07.mp3" type="AudioStream" id=47]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-paper crumple-02.mp3" type="AudioStream" id=48]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-scribble-05.mp3" type="AudioStream" id=49]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-scribble-03.mp3" type="AudioStream" id=50]
+[ext_resource path="res://assets/audio/raw_mp3/mp3-scribble-02.mp3" type="AudioStream" id=51]
+[ext_resource path="res://Global.gd" type="Script" id=52]
+
+[node name="Global" type="Node"]
+script = ExtResource( 52 )
+
+[node name="RopeSounds" type="Node" parent="."]
+
+[node name="RopeSound1" type="AudioStreamPlayer" parent="RopeSounds"]
+stream = ExtResource( 6 )
+
+[node name="RopeSound2" type="AudioStreamPlayer" parent="RopeSounds"]
+stream = ExtResource( 12 )
+
+[node name="RopeSound3" type="AudioStreamPlayer" parent="RopeSounds"]
+stream = ExtResource( 36 )
+
+[node name="RopeSound4" type="AudioStreamPlayer" parent="RopeSounds"]
+stream = ExtResource( 4 )
+
+[node name="RopeSound5" type="AudioStreamPlayer" parent="RopeSounds"]
+stream = ExtResource( 2 )
+
+[node name="RopeSound6" type="AudioStreamPlayer" parent="RopeSounds"]
+stream = ExtResource( 13 )
+
+[node name="RopeSound7" type="AudioStreamPlayer" parent="RopeSounds"]
+stream = ExtResource( 3 )
+
+[node name="CrumpleSounds" type="Node" parent="."]
+
+[node name="CrumpleSound1" type="AudioStreamPlayer" parent="CrumpleSounds"]
+stream = ExtResource( 7 )
+
+[node name="CrumpleSound2" type="AudioStreamPlayer" parent="CrumpleSounds"]
+stream = ExtResource( 48 )
+
+[node name="CrumpleSound3" type="AudioStreamPlayer" parent="CrumpleSounds"]
+stream = ExtResource( 42 )
+
+[node name="CrumpleSound4" type="AudioStreamPlayer" parent="CrumpleSounds"]
+stream = ExtResource( 10 )
+
+[node name="WritingSounds" type="Node" parent="."]
+
+[node name="WritingSound1" type="AudioStreamPlayer" parent="WritingSounds"]
+stream = ExtResource( 41 )
+
+[node name="WritingSound2" type="AudioStreamPlayer" parent="WritingSounds"]
+stream = ExtResource( 27 )
+
+[node name="WritingSound3" type="AudioStreamPlayer" parent="WritingSounds"]
+stream = ExtResource( 22 )
+
+[node name="WritingSound4" type="AudioStreamPlayer" parent="WritingSounds"]
+stream = ExtResource( 5 )
+
+[node name="WritingSound5" type="AudioStreamPlayer" parent="WritingSounds"]
+stream = ExtResource( 9 )
+
+[node name="WritingSound6" type="AudioStreamPlayer" parent="WritingSounds"]
+stream = ExtResource( 33 )
+
+[node name="WritingSound7" type="AudioStreamPlayer" parent="WritingSounds"]
+stream = ExtResource( 29 )
+
+[node name="WritingSound8" type="AudioStreamPlayer" parent="WritingSounds"]
+stream = ExtResource( 21 )
+
+[node name="EraseSounds" type="Node" parent="."]
+
+[node name="EraseSound1" type="AudioStreamPlayer" parent="EraseSounds"]
+stream = ExtResource( 43 )
+
+[node name="EraseSound2" type="AudioStreamPlayer" parent="EraseSounds"]
+stream = ExtResource( 46 )
+
+[node name="EraseSound3" type="AudioStreamPlayer" parent="EraseSounds"]
+stream = ExtResource( 8 )
+
+[node name="EraseSound4" type="AudioStreamPlayer" parent="EraseSounds"]
+stream = ExtResource( 1 )
+
+[node name="EraseSound5" type="AudioStreamPlayer" parent="EraseSounds"]
+stream = ExtResource( 45 )
+
+[node name="EraseSound6" type="AudioStreamPlayer" parent="EraseSounds"]
+stream = ExtResource( 44 )
+
+[node name="DropSounds" type="Node" parent="."]
+
+[node name="DropSound1" type="AudioStreamPlayer" parent="DropSounds"]
+stream = ExtResource( 34 )
+
+[node name="DropSound2" type="AudioStreamPlayer" parent="DropSounds"]
+stream = ExtResource( 31 )
+
+[node name="DropSound3" type="AudioStreamPlayer" parent="DropSounds"]
+stream = ExtResource( 39 )
+
+[node name="DropSound4" type="AudioStreamPlayer" parent="DropSounds"]
+stream = ExtResource( 35 )
+
+[node name="DropSound5" type="AudioStreamPlayer" parent="DropSounds"]
+stream = ExtResource( 28 )
+
+[node name="DropSound6" type="AudioStreamPlayer" parent="DropSounds"]
+stream = ExtResource( 23 )
+
+[node name="DropSound7" type="AudioStreamPlayer" parent="DropSounds"]
+stream = ExtResource( 32 )
+
+[node name="DropSound8" type="AudioStreamPlayer" parent="DropSounds"]
+stream = ExtResource( 20 )
+
+[node name="TurnSounds" type="Node" parent="."]
+
+[node name="TurnSound1" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 40 )
+
+[node name="TurnSound2" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 25 )
+
+[node name="TurnSound3" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 26 )
+
+[node name="TurnSound4" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 16 )
+
+[node name="TurnSound5" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 38 )
+
+[node name="TurnSound6" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 30 )
+
+[node name="TurnSound7" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 11 )
+
+[node name="TurnSound8" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 37 )
+
+[node name="TurnSound9" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 15 )
+
+[node name="TurnSound10" type="AudioStreamPlayer" parent="TurnSounds"]
+stream = ExtResource( 24 )
+
+[node name="ScribbleSounds" type="Node" parent="."]
+
+[node name="ScribbleSound1" type="AudioStreamPlayer" parent="ScribbleSounds"]
+stream = ExtResource( 17 )
+
+[node name="ScribbleSound2" type="AudioStreamPlayer" parent="ScribbleSounds"]
+stream = ExtResource( 51 )
+
+[node name="ScribbleSound3" type="AudioStreamPlayer" parent="ScribbleSounds"]
+stream = ExtResource( 50 )
+
+[node name="ScribbleSound4" type="AudioStreamPlayer" parent="ScribbleSounds"]
+stream = ExtResource( 19 )
+
+[node name="ScribbleSound5" type="AudioStreamPlayer" parent="ScribbleSounds"]
+stream = ExtResource( 49 )
+
+[node name="ScribbleSound6" type="AudioStreamPlayer" parent="ScribbleSounds"]
+stream = ExtResource( 14 )
+
+[node name="ScribbleSound7" type="AudioStreamPlayer" parent="ScribbleSounds"]
+stream = ExtResource( 47 )
+
+[node name="ScribbleSound8" type="AudioStreamPlayer" parent="ScribbleSounds"]
+stream = ExtResource( 18 )

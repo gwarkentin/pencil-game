@@ -18,6 +18,8 @@ var last_on_floor = 0.0
 signal take_damage(amount)
 
 func _take_damage(amount):
+	var sound = $DropSounds.get_children()[rand_range(0,$DropSounds.get_child_count())]
+	sound.play()
 	emit_signal("take_damage", amount)
 	taking_damage = true
 	

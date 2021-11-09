@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/Background/Tile_Wall_LeftCorner.png" type="Texture" id=10]
 [ext_resource path="res://Map.gd" type="Script" id=11]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 500, 1500 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
@@ -273,7 +273,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+shape = SubResource( 15 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, 4 )

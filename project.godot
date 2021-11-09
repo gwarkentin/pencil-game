@@ -15,6 +15,10 @@ run/main_scene="res://Splash.tscn"
 run/disable_stderr=true
 config/icon="res://assets/UI/TitleCard_Thumbnail.png"
 
+[autoload]
+
+Global="*res://Global.tscn"
+
 [display]
 
 window/size/resizable=false
