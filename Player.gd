@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var MOVE_SPEED = 1200
 export (int) var JUMP_SPEED = -1400
 export (int) var GRAVITY = 1200 * 2
+export (int) var TERMINAL_VEL = 3000
 var velocity = Vector2()
 var jumping = false
 var jump_time = 0.0
@@ -65,6 +66,9 @@ func _physics_process(delta):
 	get_input()
 	velocity.y += GRAVITY * delta
 	falling_velocity = velocity.y
+	
+	if velocity.y >= TERMINAL_VEL:
+		velocity.y = TERMINAL_VEL
 	
 	if not drawing:
 		_switch_animation()
